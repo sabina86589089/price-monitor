@@ -1,0 +1,44 @@
+{
+  "name": "price-monitor",
+  "version": "1.0.0",
+  "description": "竞品价格监控系统 - 自动监控淘宝/京东/拼多多价格变化，提供趋势分析和降价提醒",
+  "author": "学霸",
+  "keywords": [
+    "price",
+    "monitor",
+    "ecommerce",
+    "taobao",
+    "jd",
+    "pinduoduo",
+    "competitor",
+    "price-tracking"
+  ],
+  "main": "price_monitor.py",
+  "scripts": {
+    "test": "python3 -m pytest tests/",
+    "demo": "python3 examples/marketing_demo.py"
+  },
+  "dependencies": {},
+  "optionalDependencies": {
+    "matplotlib": ">=3.5.0",
+    "pandas": ">=1.3.0",
+    "requests": ">=2.28.0"
+  },
+  "qclaw": {
+    "emoji": "💰",
+    "category": "ecommerce",
+    "requires": ["xbrowser"],
+    "hooks": {
+      "onInstall": "echo '价格监控系统安装完成!'",
+      "onUninstall": "echo '价格监控系统已卸载'"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xueba/price-monitor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xueba/price-monitor/issues"
+  },
+  "homepage": "https://github.com/xueba/price-monitor#readme"
+}
