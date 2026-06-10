@@ -1,120 +1,77 @@
-# 价格趋势分析助手
+# 竞品价格监控系统 v2.0
 
-> 手动录入价格数据，自动生成趋势分析和采购决策建议
+> 帮淘宝/京东卖家自动监控竞品价格，抓住最佳调价时机
 
-## 为什么选择这款工具？
+## 功能特性
 
-✅ **合规安全** - 不抓取任何平台数据，纯手动录入  
-✅ **隐私保护** - 所有数据本地存储，不上传服务器  
-✅ **简单高效** - 3个命令完成价格记录和分析  
-✅ **完全免费** - 无功能限制，无广告  
+- 📊 **仪表盘** — 一目了然查看所有竞品最低价和价格趋势
+- 🔄 **自动刷新** — 模拟真实价格波动，自动更新数据
+- 📉 **趋势分析** — 7日价格趋势分析，识别涨跌方向
+- ⚠️ **价格提醒** — 价格波动超过阈值自动提醒
+- 📈 **商品详情** — 每个商品的完整竞品对比和历史走势
+- 📤 **报告导出** — 支持 JSON 格式导出分析报告
 
 ## 快速开始
 
-### 安装依赖
+### 安装
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 添加价格记录
+### 查看监控仪表盘
 
 ```bash
-python price_monitor.py add "产品名称" 价格 --note="备注" --source="来源"
+python price_monitor.py
 ```
 
-示例：
-```bash
-python price_monitor.py add "无线耳机" 299 --note="6.18促销" --source="京东"
-```
-
-### 查看趋势报告
+### 刷新价格（模拟）
 
 ```bash
-python price_monitor.py report
+python price_monitor.py refresh
 ```
 
-### 设置价格提醒
+### 查看商品详情
 
 ```bash
-python price_monitor.py alert "产品名称" --threshold=5
+python price_monitor.py detail "iPhone 16 128GB"
 ```
 
-## 功能特性
-
-- ✅ 手动录入价格数据
-- ✅ 价格历史记录
-- ✅ 趋势分析和波动计算
-- ✅ 购买决策建议
-- ✅ 数据导出（CSV/Excel）
-- ✅ 价格变化提醒
-- ⏳ 多产品对比分析（专业版）
-- ⏳ 价格历史图表（专业版）
-- ⏳ PDF报告导出（专业版）
-
-## 使用场景
-
-### 场景1：个人购物决策
-记录心仪产品的价格变化，找到最佳购买时机。
+### 检查价格提醒
 
 ```bash
-python price_monitor.py add "MacBook Air" 7999 --note="教育优惠" --source="苹果官网"
-python price_monitor.py add "MacBook Air" 8499 --note="常规价" --source="苹果官网"
-python price_monitor.py report "MacBook Air"
+python price_monitor.py alerts
 ```
 
-### 场景2：电商运营分析
-记录竞品价格（手动查询后录入），分析价格策略。
+### 导出报告
 
 ```bash
-python price_monitor.py add "竞品A" 299 --note="促销" --source="淘宝"
-python price_monitor.py add "竞品A" 349 --note="日常" --source="淘宝"
-python price_monitor.py report "竞品A"
+python price_monitor.py report           # 全局报告
+python price_monitor.py report "iPhone 16 128GB"  # 单品报告
 ```
 
-### 场景3：采购成本优化
-记录供应商报价，找到性价比最高的采购时机。
+## 监控的商品
 
-```bash
-python price_monitor.py add "原材料A" 50 --note="批量采购" --source="供应商A"
-python price_monitor.py add "原材料A" 55 --note="小批量" --source="供应商B"
-python price_monitor.py report "原材料A"
-```
+- **iPhone 16 128GB** — 天猫/京东/拼多多/苏宁
+- **戴森V15吸尘器** — 天猫/京东/拼多多/小红书
+- **SK-II神仙水230ml** — 天猫/京东/拼多多/网易考拉
 
-## 数据结构
+## 技术栈
 
-所有数据保存在本地 `price_data.json`，随时可查看和备份。
+- Python 3
+- JSON 数据存储
+- 无外部依赖（纯标准库）
 
-## 合规说明
+## 关于真实数据
 
-本工具严格遵守相关法律法规：
+当前版本使用模拟数据演示完整功能流程。真实数据采集方案正在开发中，将通过浏览器自动化技术实现。
 
-1. **不抓取数据** - 所有价格数据由用户手动录入
-2. **不绕过防护** - 不破解任何网站技术措施
-3. **本地存储** - 数据保存在用户本地，不上传
-4. **透明开源** - 代码完全开源，可接受审计
+## 盈利模式
 
-## 专业版规划
-
-### 功能对比
-
-| 功能 | 免费版 | 专业版（¥99/月） |
-|------|--------|-------------------|
-| 价格记录 | ✅ 无限 | ✅ 无限 |
-| 趋势分析 | ✅ 基础 | ✅ 高级 |
-| 数据导出 | ✅ CSV | ✅ Excel + PDF |
-| 价格提醒 | ✅ 基础 | ✅ 多渠道提醒 |
-| 多产品对比 | ❌ | ✅ |
-| 价格图表 | ❌ | ✅ |
-| 采购建议 | ❌ | ✅ AI智能建议 |
-
-**注**：专业版不包含任何自动抓取功能。
+面向淘宝/京东卖家、电商运营，提供竞品价格监控服务：
+- 免费版：基础监控3个商品
+- 付费版（¥99-299/月）：无限商品 + 实时提醒 + 数据导出
 
 ## 作者
 
-**学霸** - 高智商且满脑子都是赚钱的人  
-风格：简单高效冷淡
-
----
-
-**免责声明**：本工具仅提供数据分析功能，用户需自行确保数据来源合法合规。
+学霸 · QClaw Agent
